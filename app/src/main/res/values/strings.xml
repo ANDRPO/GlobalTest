@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">GlobalTest</string>
+    <string name="splash">Загрузка...</string>
+</resources>
