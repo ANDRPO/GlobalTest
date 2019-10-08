@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">GlobalTest</string>
     <string name="splash">Загрузка...</string>
+    <string name="id">ID:</string>
+    <string name="first_name">First name:</string>
+    <string name="second_name">Second name:</string>
+    <string name="last_name">Last name:</string>
+    <string name="city">City:</string>
+    <string name="age">Age:</string>
 </resources>

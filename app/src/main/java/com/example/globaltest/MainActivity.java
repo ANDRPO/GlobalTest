@@ -1,8 +1,11 @@
 package com.example.globaltest;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import org.json.JSONArray;
@@ -30,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
                         JO.getString("second_name"),
                         JO.getString("last_name"),
                         JO.getString("city"),
+                        JO.getString("url"),
                         JO.getString("age")));
                 Log.e("HPL ME PLS", JO.getString("first_name"));
             } catch (JSONException e) {
@@ -41,5 +45,14 @@ public class MainActivity extends AppCompatActivity {
 
         MyCustomAdapter adapter = new MyCustomAdapter(this, userList);
         mListView.setAdapter(adapter);
+
+        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent showData = new Intent(MainActivity.this, SashaList.class);
+                showData.putExtra("id", position);
+                startActivity(showData);
+            }
+        });
     }
 }

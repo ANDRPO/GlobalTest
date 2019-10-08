@@ -35,12 +35,12 @@ public class MyCustomAdapter extends ArrayAdapter<MyDataUsers> {
         TextView textViewage = listViewItem.findViewById(R.id.age);
 
         MyDataUsers user = newsList.get(position);
-        textViewid.setText(String.valueOf(user.getId_st()));
-        textViewfirst.setText(user.getFir_name_st());
-        textViewsecond.setText(user.getSec_name_st());
-        textViewlast.setText(user.getLas_name_st());
-        textViewcity.setText(user.getCity_st());
-        textViewage.setText(user.getAge_st());
+        textViewid.append(String.valueOf(user.getId_st()));
+        textViewfirst.append(user.getFir_name_st());
+        textViewsecond.append(user.getSec_name_st());
+        textViewlast.append(user.getLas_name_st());
+        textViewcity.append(user.getCity_st());
+        textViewage.append(user.getAge_st());
 
 
         return listViewItem;
