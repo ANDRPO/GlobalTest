@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".SashaList">
+
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/img_avatar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        tools:srcCompat="@tools:sample/avatars"
+        android:paddingVertical="5dp"/>
+    <TextView
+        android:id="@+id/fi_n"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingStart="5dp"
+        android:text="@string/first_name"
+        android:textSize="20sp"
+        android:textColor="@android:color/black"/>
+    <TextView
+        android:id="@+id/se_n"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        android:paddingStart="5dp"
+        android:text="@string/second_name"
+        android:textSize="20sp"
+        android:textColor="@android:color/black" />
+    <TextView
+        android:id="@+id/la_n"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        android:paddingStart="5dp"
+        android:text="@string/last_name"
+        android:textSize="20sp"
+        android:textColor="@android:color/black" />
+    <TextView
+        android:id="@+id/tv_city"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        android:paddingStart="5dp"
+        android:text="@string/city"
+        android:textSize="20sp"
+        android:textColor="@android:color/black" />
+    <TextView
+        android:id="@+id/tv_age"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        android:paddingStart="5dp"
+        android:text="@string/age"
+        android:textSize="20sp"
+        android:textColor="@android:color/black" />
+</LinearLayout>
