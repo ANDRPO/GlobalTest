@@ -7,7 +7,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
+
+
 import java.util.List;
 
 public class MyCustomAdapter extends ArrayAdapter<MyDataUsers> {
@@ -27,21 +32,22 @@ public class MyCustomAdapter extends ArrayAdapter<MyDataUsers> {
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         LayoutInflater inflater = LayoutInflater.from(context);
         View listViewItem = inflater.inflate(R.layout.my_item,null,true);
-        TextView textViewid = listViewItem.findViewById(R.id.id);
-        TextView textViewfirst = listViewItem.findViewById(R.id.first_name);
-        TextView textViewsecond = listViewItem.findViewById(R.id.second_name);
-        TextView textViewlast = listViewItem.findViewById(R.id.last_name);
-        TextView textViewcity = listViewItem.findViewById(R.id.city);
-        TextView textViewage = listViewItem.findViewById(R.id.age);
+        TextView textView_first_name = listViewItem.findViewById(R.id.first_name);
+        TextView textView_second_name = listViewItem.findViewById(R.id.second_name);
+        TextView textView_age = listViewItem.findViewById(R.id.age);
 
         MyDataUsers user = newsList.get(position);
-        textViewid.append(String.valueOf(user.getId_st()));
-        textViewfirst.append(user.getFir_name_st());
-        textViewsecond.append(user.getSec_name_st());
-        textViewlast.append(user.getLas_name_st());
-        textViewcity.append(user.getCity_st());
-        textViewage.append(user.getAge_st());
+        textView_first_name.append(user.getFir_name_st());
+        textView_second_name.append(user.getSec_name_st());
+        textView_age.append(user.getAge_st());
 
+        Picasso.with(context)
+                .load(user.getUrl_st())
+                .resize(100,100)
+                .transform(new MyCustomTransformers())
+                .placeholder(R.drawable.wait)
+                .error(R.drawable.error)
+                .into((ImageView) listViewItem.findViewById(R.id.img_pers));
 
         return listViewItem;
     }

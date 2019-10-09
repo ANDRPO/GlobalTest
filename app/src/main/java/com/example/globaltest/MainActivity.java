@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -23,10 +22,10 @@ public class MainActivity extends AppCompatActivity {
 
         ListView mListView = findViewById(R.id.listView);
         ArrayList<MyDataUsers> userList = new ArrayList<>();
-        for(int i = 0; i < getData.JA.length(); i++)
+        for(int i = 0; i < getData.JA_users.length(); i++)
         {
             try {
-                JO = (JSONObject) getData.JA.get(i);
+                JO = (JSONObject) getData.JA_users.get(i);
                 userList.add(new MyDataUsers(
                         JO.getInt("id"),
                         JO.getString("first_name"),
@@ -41,15 +40,13 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
-
-
         MyCustomAdapter adapter = new MyCustomAdapter(this, userList);
         mListView.setAdapter(adapter);
 
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent showData = new Intent(MainActivity.this, SashaList.class);
+                Intent showData = new Intent(MainActivity.this, Person_list.class);
                 showData.putExtra("id", position);
                 startActivity(showData);
             }

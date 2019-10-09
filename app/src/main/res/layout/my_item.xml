@@ -1,54 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#8099CCFF"
+    android:orientation="vertical"
     android:textColor="@android:color/black">
 
-    <TextView
-        android:id="@+id/id"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/id"
-        android:textColor="@android:color/black"
-        android:textSize="21sp" />
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/img_pers"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:padding="10dp"
+        tools:srcCompat="@tools:sample/avatars" />
+
 
     <TextView
         android:id="@+id/first_name"
-        android:layout_width="match_parent"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:text="@string/first_name"
+        android:layout_toRightOf="@+id/img_pers"
+        android:paddingTop="5dp"
+        android:text="First name: "
         android:textColor="@android:color/black"
-        android:textSize="20sp"/>
+        android:textSize="18sp" />
+
     <TextView
         android:id="@+id/second_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/second_name"
+        android:layout_below="@+id/first_name"
+        android:layout_toRightOf="@+id/img_pers"
+        android:text="Second name: "
         android:textColor="@android:color/black"
-        android:textSize="20sp"/>
-    <TextView
-        android:id="@+id/last_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/last_name"
-        android:textColor="@android:color/black"
-        android:textSize="20sp"/>
-    <TextView
-        android:id="@+id/city"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/city"
-        android:textColor="@android:color/black"
-        android:textSize="20sp"/>
+        android:textSize="14sp" />
+
     <TextView
         android:id="@+id/age"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/age"
+        android:layout_marginStart="0dp"
+        android:layout_toEndOf="@+id/first_name"
+        android:paddingTop="10dp"
+        android:text="Age: "
         android:textColor="@android:color/black"
-        android:textSize="20sp"/>
+        android:textSize="14sp" />
 
 
 
-</LinearLayout>
+
+
+</RelativeLayout>

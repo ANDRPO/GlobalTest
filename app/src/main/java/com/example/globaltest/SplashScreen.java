@@ -15,7 +15,7 @@ public class SplashScreen extends AppCompatActivity {
         getData get = new getData();
         get.execute();
 
-        while(getData.JA.length() == 0){}
+        while(getData.JA_users.length() == 0 && getData.JA_comments.length() == 0){}
 
         new Handler().postDelayed(new Runnable() {
             @Override

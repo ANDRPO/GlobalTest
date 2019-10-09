@@ -13,11 +13,15 @@ import java.net.URL;
 
 public class getData extends AsyncTask<Void, Void, Void> {
     String data = "";
-    public static JSONArray JA = new JSONArray();
+    String url_users = "https://my-json-server.typicode.com/Joyuse/JsonTest/users";
+    String url_comments = "https://my-json-server.typicode.com/Joyuse/JsonTest/comments";
+
+    public static JSONArray JA_users = new JSONArray();
+    public static JSONArray JA_comments = new JSONArray();
     @Override
     public Void doInBackground(Void... voids) {
         try {
-            URL url = new URL("https://my-json-server.typicode.com/Joyuse/JsonTest/users");
+            URL url = new URL(url_users);
             HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
             InputStream inputStream = httpURLConnection.getInputStream();
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
@@ -26,7 +30,18 @@ public class getData extends AsyncTask<Void, Void, Void> {
                 line = bufferedReader.readLine();
                 data = data + line;
             }
-            JA = new JSONArray(data);
+            JA_users = new JSONArray(data);
+            data = "";
+            url = new URL(url_comments);
+            httpURLConnection = (HttpURLConnection) url.openConnection();
+            inputStream = httpURLConnection.getInputStream();
+            bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+            while(line != null){
+                line = bufferedReader.readLine();
+                data = data + line;
+            }
+            JA_comments = new JSONArray(data);
+
         } catch (MalformedURLException e) {
             e.printStackTrace();
         } catch (IOException e) {
