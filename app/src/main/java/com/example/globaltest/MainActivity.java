@@ -3,10 +3,12 @@ package com.example.globaltest;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+
+import com.example.globaltest.CustomAdapters.MyCustomAdapter;
+import com.example.globaltest.Data.MyDataUsers;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -34,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
                         JO.getString("city"),
                         JO.getString("url"),
                         JO.getString("age")));
-                Log.e("HPL ME PLS", JO.getString("first_name"));
             } catch (JSONException e) {
                 e.printStackTrace();
             }

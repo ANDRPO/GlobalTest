@@ -1,4 +1,4 @@
-package com.example.globaltest;
+package com.example.globaltest.CustomAdapters;
 
 import android.app.Activity;
 import android.support.annotation.NonNull;
@@ -10,6 +10,9 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.globaltest.MyCustomTransformers;
+import com.example.globaltest.Data.MyDataUsers;
+import com.example.globaltest.R;
 import com.squareup.picasso.Picasso;
 
 
@@ -48,7 +51,6 @@ public class MyCustomAdapter extends ArrayAdapter<MyDataUsers> {
                 .placeholder(R.drawable.wait)
                 .error(R.drawable.error)
                 .into((ImageView) listViewItem.findViewById(R.id.img_pers));
-
         return listViewItem;
     }
 }

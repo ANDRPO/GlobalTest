@@ -32,6 +32,7 @@ public class getData extends AsyncTask<Void, Void, Void> {
             }
             JA_users = new JSONArray(data);
             data = "";
+            line = "";
             url = new URL(url_comments);
             httpURLConnection = (HttpURLConnection) url.openConnection();
             inputStream = httpURLConnection.getInputStream();

@@ -1,4 +1,4 @@
-package com.example.globaltest;
+package com.example.globaltest.Data;
 
 public class MyDataUsers {
     private int id_st;

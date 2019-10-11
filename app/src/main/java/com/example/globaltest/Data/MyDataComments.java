@@ -1,4 +1,4 @@
-package com.example.globaltest;
+package com.example.globaltest.Data;
 
 public class MyDataComments {
     private int id_com;

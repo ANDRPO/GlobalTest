@@ -1,10 +1,16 @@
 package com.example.globaltest;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import com.example.globaltest.CustomAdapters.MyCustomAdapterForComments;
+import com.example.globaltest.Data.MyDataComments;
 import com.squareup.picasso.Picasso;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -17,8 +23,6 @@ public class Person_list extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sasha_list);
-
-
 
         Bundle arguments = getIntent().getExtras();
         int pos = (Integer) arguments.get("id");
@@ -59,6 +63,15 @@ public class Person_list extends AppCompatActivity {
                 e.printStackTrace();
             }
         }
+
+        Button b_gallery = findViewById(R.id.b_gallery);
+        b_gallery.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Person_list.this, Gallery.class));
+                finish();
+            }
+        });
 
         MyCustomAdapterForComments adapter = new MyCustomAdapterForComments(this, commentList);
         mListView_comments.setAdapter(adapter);
